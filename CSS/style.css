@@ -20,12 +20,15 @@
 .width-90{
   width : 90%;
 }
+
 .width-75{
   width : 75%;
 }
+
 .width-50{
   width : 50%;
 }
+
 .width-25{
   width : 25%;
 }
@@ -57,6 +60,11 @@
   padding: 0.5rem;
 }
 
+.padding-V-standard{
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+}
+
 /*BOX-SHADOW*/
 .box-shadow-standard{
   -webkit-box-shadow: 0px 0px 1px 2px rgba(153,153,153,0.5);
@@ -82,7 +90,20 @@
   background-color: #f5f5f5;
 }
 
-/*TARGETED*/
+.bg-black{
+    background-color: black;
+}
+
+.bg-darkred{
+  background-color: darkred;
+}
+
+/*COLOR*/
+.color-white{
+  color: white;
+}
+
+/*ELEMENTS*/
 body{
   background-image: url("../Ressources/bg-body.jpg");
   background-position: center;
@@ -94,6 +115,7 @@ body{
 
 header{
   border-bottom: 1px grey solid;
+  color: white;
   margin-bottom: 1rem;
 }
 
@@ -103,18 +125,23 @@ header{
   margin-bottom: 0;
   margin-left: auto;
   margin-right: auto;
-  background-color: rgba(255, 255, 255, 0.9);
+  overflow: hidden;
+  background-color: rgba(255, 180, 180, 0.9);
   -webkit-box-shadow: 0px 0px 1px 2px rgba(153,153,153,0.5);
   -moz-box-shadow: 0px 0px 1px 2px rgba(153,153,153,0.5);
   box-shadow: 0px 0px 1px 2px rgba(153,153,153,0.5);
 }
 
 aside{
+  float: right;
   width: 25%;
+  margin-bottom: 1rem;
 }
 
 .main-main{
+  float: left;
   width: 70%;
+  margin-bottom: 1rem;
 }
 
 figure{
@@ -122,7 +149,7 @@ figure{
   display: block;
 }
 
-.link-figure:hover{
+a:hover{
   opacity: 0.8;
 }
 
@@ -132,10 +159,12 @@ figure{
 
 footer{
   margin-top: 1rem;
-  border: 1px lightgrey solid;
+  border-top: 1px grey solid;
   text-align: center;
   height: 2rem;
-  background-color: lightgrey;
+  background-color: darkred;
+  color: white;
+  clear: both;
 }
 
 .img-standard{
@@ -143,14 +172,40 @@ footer{
   height : 290px;
 }
 
-@media screen and (max-width: 992px) {
+/*MEDIA QUERIES*/
+@media screen and (min-width: 769px) and (max-width: 992px) {
   .content{
     width: 100%;
   }
-}
 
-@media screen and (max-width: 768px) {
   .main-main{
     width: 100%;
+  }
+
+  aside{
+    float:none;
+    width: 100%;
+  }
+
+  .display-desktop{
+    display: none;
+  }
+
+  .align-tablet{
+    display: inline-block;
+  }
+
+  h2{
+    height: 32px;
+  }
+}
+
+@media screen and (min-width: 577px) and (max-width: 768px) {
+
+}
+
+@media screen and (max-width: 576px) {
+  .align-tablet{
+    display: block;
   }
 }
