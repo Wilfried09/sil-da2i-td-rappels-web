@@ -1,0 +1,58 @@
+/*POSITION*/
+.centered-element{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.right-element{
+  float: right;
+}
+
+/*WIDTH*/
+.width-100{
+  width : 100%;
+}
+
+.width-90{
+  width : 90%;
+}
+.width-75{
+  width : 75%;
+}
+.width-50{
+  width : 50%;
+}
+.width-25{
+  width : 25%;
+}
+
+.centered-text{
+  text-align: center;
+}
+
+/*TARGETED*/
+body{
+  width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+aside{
+  float: right;
+  background-color: lightgrey;
+  width: 40vw;
+}
+
+main{
+  float: left;
+  width: 50vw
+}
+
+footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border: 1px lightgrey solid;
+  text-align: center;
+  height: 2rem;
+}
