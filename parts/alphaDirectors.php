@@ -9,7 +9,7 @@ $nb = $nb->fetch();
      $data = $bdd->query('SELECT DISTINCT p.firstname, p.lastname FROM person p, moviehasperson mp WHERE p.id_person = mp.id_person AND mp.role = 1 AND p.id_person = "'.$i.'"');
      $data = $data->fetch();
      if($data[0] != ''){
-       $return = $return."<li>".$data[0]." ".$data[1]."</li>";
+       $return = $return."<li><a href='./director.php'>".$data[0]." ".$data[1]."</a></li>";
      }
    }
    return $return;
@@ -17,7 +17,7 @@ $nb = $nb->fetch();
 
 ?>
 
-<div class="display-inline left-text">
+<div class="centered-element">
   <h2>Réalisateurs</h2>
   <ul>
 

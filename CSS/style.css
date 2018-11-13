@@ -12,6 +12,10 @@
   display: inline-block;
 }
 
+.display-flex{
+  display: flex;
+}
+
 /*WIDTH*/
 .width-100{
   width : 100%;
@@ -29,6 +33,10 @@
   width : 50%;
 }
 
+.width-30{
+  width: 30%;
+}
+
 .width-25{
   width : 25%;
 }
@@ -41,7 +49,17 @@
   text-align: left;
 }
 
+/*HEIGHT*/
+.height-100{
+  height: 100%;
+}
+
 /*MARGIN*/
+.margin-H-big{
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
 .margin-H-standard{
   margin-left: 0.5rem;
   margin-right: 0.5rem;
@@ -127,6 +145,10 @@ header{
   color: white;
   margin-bottom: 1rem;
   text-align: center;
+}
+
+ul{
+  padding-inline-start:20px;
 }
 
 .content{
