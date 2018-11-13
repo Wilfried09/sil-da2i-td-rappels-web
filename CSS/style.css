@@ -37,6 +37,10 @@
   text-align: center;
 }
 
+.left-text{
+  text-align: left;
+}
+
 /*MARGIN*/
 .margin-H-standard{
   margin-left: 0.5rem;
@@ -122,6 +126,7 @@ header{
   border-bottom: 1px grey solid;
   color: white;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .content{
@@ -163,10 +168,6 @@ a:hover{
 }
 
 footer{
-<<<<<<< HEAD
-  margin-top: 1rem;
-=======
->>>>>>> step 5
   border-top: 1px grey solid;
   text-align: center;
   height: 2rem;
@@ -180,17 +181,12 @@ footer{
   height : 290px;
 }
 
-<<<<<<< HEAD
-/*MEDIA QUERIES*/
-@media screen and (min-width: 769px) and (max-width: 992px) {
-=======
 h1{
   margin-top: 0;
 }
 
 /*MEDIA QUERIES*/
 @media screen and (max-width: 992px) {
->>>>>>> step 5
   .content{
     width: 100%;
   }
@@ -202,10 +198,7 @@ h1{
   aside{
     float:none;
     width: 100%;
-<<<<<<< HEAD
-=======
     margin-bottom: 0;
->>>>>>> step 5
   }
 
   .display-desktop{
@@ -216,32 +209,16 @@ h1{
     display: inline-block;
   }
 
-<<<<<<< HEAD
-  h2{
-    height: 32px;
-  }
-}
-
-@media screen and (min-width: 577px) and (max-width: 768px) {
-
-}
-
-@media screen and (max-width: 576px) {
-=======
   .poster-and-description{
     text-align: center;
   }
 }
 
 @media screen and (max-width: 768px) {
->>>>>>> step 5
   .align-tablet{
     display: block;
   }
 }
-<<<<<<< HEAD
-=======
 
 @media screen and (max-width: 576px) {
 }
->>>>>>> step 5
