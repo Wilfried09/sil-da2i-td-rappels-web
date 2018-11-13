@@ -4,5 +4,5 @@
 ?>
 
 <header>
-  <h1><?php echo $title[0] ?></h1>
+  <h1>Cinémane</h1>
 </header>

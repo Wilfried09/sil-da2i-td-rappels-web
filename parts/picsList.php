@@ -33,5 +33,7 @@
 <aside class="centered-text margin-right-standard border-radius-standard display-inline bg-black color-white box-shadow-standard">
     <h2 class="padding-standard no-margin bg-darkred color-white border-radius-standard">Casting :</h2>
       <hr class="no-margin">
-      <?php echo displayPeople($nb, $bdd);?>
+      <div class="align-tablet">
+        <?php echo displayPeople($nb, $bdd);?>
+      </div>
 </aside>
