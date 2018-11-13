@@ -5,8 +5,8 @@
 
   function displayFilm($nb, $bdd){
     $return = '';
-    for($i=0;$i<$nb[0];$i=$i+1){
-      $data = $bdd->query('SELECT m.title, p.path FROM movie m, picture p, moviehaspicture mp  WHERE m.id_movie = mp.id_movie AND mp.id_picture = p.id_picture AND m.id_movie = 2 AND mp.type != 1');
+    for($i=1;$i<=$nb[0]+1;$i=$i+1){
+      $data = $bdd->query('SELECT m.title, p.path FROM movie m, picture p, moviehaspicture mp  WHERE m.id_movie = mp.id_movie AND mp.id_picture = p.id_picture AND mp.type != 1 AND m.id_movie = "'.$i.'"');
       $data = $data->fetch();
       $return = $return.getBlock('filmGallery', $data);
       if($i != $nb[0]){

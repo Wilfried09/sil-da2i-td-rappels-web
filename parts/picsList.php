@@ -14,14 +14,17 @@
   function displayPeople($nb, $bdd){
     $return = '';
     for($i=0;$i<$nb[0];$i=$i+1){
-      $data = $bdd->query('SELECT p.firstname, p.lastname, mp.role, pic.path FROM person p, moviehasperson mp, personhaspicture pp, picture pic  WHERE p.id_person = mp.id_person AND p.id_person = pp.id_person AND pp.id_picture = pic.id_picture AND p.id_person = 1');
+      if($i < $nb[0]-1){
+        $var = "<hr class='display-desktop'>";
+      }else{
+        $var = '';
+      }
+      $data = $bdd->query('SELECT p.firstname, p.lastname, mp.role, pic.path FROM person p, moviehasperson mp, personhaspicture pp, picture pic  WHERE p.id_person = mp.id_person AND p.id_person = pp.id_person AND pp.id_picture = pic.id_picture AND p.id_person = "'.($i+1).'"');
       $data = $data->fetch();
       $return = $return.getBlock('personInfos', isDirector($data));
-      if($i < $nb[0]-1){
-        $return = $return."<hr class='display-desktop'>";
-      }
+      echo $return;
+      echo $var;
     }
-    return $return;
   }
 ?>
 
