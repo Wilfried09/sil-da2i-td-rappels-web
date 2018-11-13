@@ -163,7 +163,10 @@ a:hover{
 }
 
 footer{
+<<<<<<< HEAD
   margin-top: 1rem;
+=======
+>>>>>>> step 5
   border-top: 1px grey solid;
   text-align: center;
   height: 2rem;
@@ -177,8 +180,17 @@ footer{
   height : 290px;
 }
 
+<<<<<<< HEAD
 /*MEDIA QUERIES*/
 @media screen and (min-width: 769px) and (max-width: 992px) {
+=======
+h1{
+  margin-top: 0;
+}
+
+/*MEDIA QUERIES*/
+@media screen and (max-width: 992px) {
+>>>>>>> step 5
   .content{
     width: 100%;
   }
@@ -190,6 +202,10 @@ footer{
   aside{
     float:none;
     width: 100%;
+<<<<<<< HEAD
+=======
+    margin-bottom: 0;
+>>>>>>> step 5
   }
 
   .display-desktop{
@@ -200,6 +216,7 @@ footer{
     display: inline-block;
   }
 
+<<<<<<< HEAD
   h2{
     height: 32px;
   }
@@ -210,7 +227,21 @@ footer{
 }
 
 @media screen and (max-width: 576px) {
+=======
+  .poster-and-description{
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+>>>>>>> step 5
   .align-tablet{
     display: block;
   }
 }
+<<<<<<< HEAD
+=======
+
+@media screen and (max-width: 576px) {
+}
+>>>>>>> step 5
