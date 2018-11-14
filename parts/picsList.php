@@ -1,28 +1,23 @@
 <?php
-  $nb = $bdd->query('SELECT COUNT(id_person) FROM person');
-  $nb = $nb->fetch();
-
-  function isDirector($data){
-    if($data[2]){
-      $data[2]="Réalisateur";
-    }else{
-      $data[2]="Acteur";
+  function displayPeople($directors, $actors){
+    $all = [];
+    $y = 0;
+    for($j=0;$j<=count($directors);$j++){
+      $all[$y]=$directors[$j];
+      $y++;
     }
-    return $data;
-  }
+    for($k=0;$k<=count($actors);$k++){
+      $all[$y]=$actors[$k];
+      $y++;
+    }
 
-  function displayPeople($nb, $bdd){
-    $return = '';
-    for($i=0;$i<$nb[0];$i=$i+1){
-      if($i < $nb[0]-1){
+    for($i=0;$i<count($all);$i++){
+      if($i <count($all)-1){
         $var = "<hr class='display-desktop'>";
       }else{
         $var = '';
       }
-      $data = $bdd->query('SELECT p.firstname, p.lastname, mp.role, pic.path FROM person p, moviehasperson mp, personhaspicture pp, picture pic  WHERE p.id_person = mp.id_person AND p.id_person = pp.id_person AND pp.id_picture = pic.id_picture AND p.id_person = "'.($i+1).'"');
-      $data = $data->fetch();
-      $return = $return.getBlock('personInfos', isDirector($data));
-      echo $return;
+      getBlock('personInfos', $all[$i+1]);
       echo $var;
     }
   }
@@ -34,6 +29,6 @@
     <h2 class="padding-standard no-margin bg-darkred color-white border-radius-standard">Casting :</h2>
       <hr class="no-margin">
       <div class="align-tablet">
-        <?php echo displayPeople($nb, $bdd);?>
+        <?php displayPeople($directors, $actors);?>
       </div>
 </aside>

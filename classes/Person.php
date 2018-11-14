@@ -5,20 +5,22 @@ class Person{
   private $lastname;
   private $birthdate;
   private $biography;
+  private $path;
 
   public function __construct($id){
     $bdd = new PDO('mysql:host=localhost;dbname=bddmovie;charset=utf8', 'root', '');
-    $person = $bdd->query('SELECT * FROM person WHERE id_person = "'.$id.'"');
+    $person = $bdd->query('SELECT p.id_person, p.firstname, p.lastname, p.birthdate, p.biography, pic.path FROM person p, personhaspicture pp, picture pic WHERE p.id_person = pp.id_person AND pp.id_picture = pic.id_picture AND p.id_person = "'.$id.'"');
     $person = $person->fetch();
     $this->id = $person[0];
     $this->firstname = $person[1];
     $this->lastname = $person[2];
     $this->birthdate = $person[3];
     $this->biography = $person[4];
+    $this->path = $person[5];
   }
 
   public function get_id(){
-    return $this->id; 
+    return $this->id;
   }
 
   public function get_firstname(){
@@ -35,5 +37,9 @@ class Person{
 
   public function get_biography(){
     return $this->biography;
+  }
+
+  public function get_path(){
+    return $this->path;
   }
 }
