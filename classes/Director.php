@@ -1,4 +1,6 @@
 <?php
+require './classes/Person.php';
+
 class Director extends Person{
   private $role;
 
@@ -6,8 +8,8 @@ class Director extends Person{
     $this->role = "Réalisateur";
   }
 
-  public get_role(){
-    return $this->role
+  public function get_role(){
+    return $this->role;
   }
 }
 ?>

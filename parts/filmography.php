@@ -1,19 +1,8 @@
 <?php
-  $nb = $bdd->query('SELECT COUNT(m.id_movie) FROM movie m, moviehaspicture mp WHERE m.id_movie = mp.id_movie AND mp.type = 0');
-  $nb = $nb->fetch();
-
-
-  function displayFilm($nb, $bdd){
-    $return = '';
-    for($i=1;$i<=$nb[0]+1;$i=$i+1){
-      $data = $bdd->query('SELECT m.title, p.path FROM movie m, picture p, moviehaspicture mp  WHERE m.id_movie = mp.id_movie AND mp.id_picture = p.id_picture AND mp.type != 1 AND m.id_movie = "'.$i.'"');
-      $data = $data->fetch();
-      $return = $return.getBlock('filmGallery', $data);
-      if($i != $nb[0]){
-        $return = $return."<hr class='display-desktop'>";
-      }
+  function displayFilm($movies){
+    for($i=1;$i<=count($movies);$i=$i+1){
+      getBlock('filmGallery', $movies[$i]);
     }
-    return $return;
   }
 
 ?>
@@ -22,6 +11,6 @@
 <section>
   <h2 class="padding-standard no-margin bg-darkred color-white border-radius-right">Filmographie</h2>
   <article class="centered-text">
-   <?php displayFilm($nb, $bdd) ?>
+   <?php displayFilm($movies) ?>
  </article>
 </section>

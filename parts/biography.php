@@ -12,5 +12,6 @@
     <article class="width-90 centered-element">
       <?php echo $columbus[2] ?>
     </article>
-    <?php getBlock('filmography'); ?>
+
+    <?php getBlock('filmography');?>
 </main>

@@ -6,8 +6,8 @@ class Actor extends Person{
     $this->role = "Acteur";
   }
 
-  public get_role(){
-    return $this->role
+  public function get_role(){
+    return $this->role;
   }
 }
 ?>
