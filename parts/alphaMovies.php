@@ -19,7 +19,7 @@ $nb = $nb->fetch();
   <h2>Films</h2>
   <ul>
 
-    <?php echo displayMovies($nb,$bdd) ?>
+    <?= displayMovies($nb,$bdd) ?>
 
   </ul>
 </div>

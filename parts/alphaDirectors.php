@@ -21,7 +21,7 @@ $nb = $nb->fetch();
   <h2>Réalisateurs</h2>
   <ul>
 
-    <?php echo displayDirectors($nb,$bdd) ?>
+    <?= displayDirectors($nb,$bdd) ?>
 
   </ul>
 </div>

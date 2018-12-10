@@ -1,4 +1,4 @@
 <figure class="display-inline">
- <img class="img-standard" src="<?php echo $data->get_path() ?>" alt="<?php echo $data->get_title() ?>">
- <figcaption><?php echo $data->get_title() ?></figcaption>
+ <img class="img-standard" src="<?= $data->get_path() ?>" alt="<?= $data->get_title() ?>">
+ <figcaption><?= $data->get_title() ?></figcaption>
 </figure>

@@ -1,1 +1,1 @@
-<?php getBlock('menu'); getBlock('movieTitle');?>
+<?php getBlock('movieTitle');?>

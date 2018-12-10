@@ -2,11 +2,11 @@
   function displayPeople($directors, $actors){
     $all = [];
     $y = 0;
-    for($j=0;$j<=count($directors);$j++){
+    for($j=0;$j<count($directors);$j++){
       $all[$y]=$directors[$j];
       $y++;
     }
-    for($k=0;$k<=count($actors);$k++){
+    for($k=0;$k<count($actors);$k++){
       $all[$y]=$actors[$k];
       $y++;
     }
@@ -17,7 +17,7 @@
       }else{
         $var = '';
       }
-      getBlock('personInfos', $all[$i+1]);
+      getBlock('personInfos', $all[$i]);
       echo $var;
     }
   }

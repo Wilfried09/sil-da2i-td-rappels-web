@@ -1,10 +1,10 @@
 <?php
-require './classes/Person.php';
 
 class Director extends Person{
   private $role;
 
-  public function __construct(){
+  public function __construct($id){
+    parent::__construct($id);
     $this->role = "Réalisateur";
   }
 

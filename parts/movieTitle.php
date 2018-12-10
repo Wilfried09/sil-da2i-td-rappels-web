@@ -1,8 +1,5 @@
-<?php
-  $title = $bdd->query('SELECT title FROM movie');
-  $title = $title->fetch();
-?>
-
 <header>
-  <h1>Cinémane</h1>
+  <a class="color-white" href="./index.php">
+    <h1>Cinémane</h1>
+  </a>
 </header>

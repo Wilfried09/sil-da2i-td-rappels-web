@@ -1,7 +1,9 @@
+
+
 <figure class="centered-text display-inline">
-<span class="display-block"><?php echo $data->get_role() ?></span>
-<a href="./director.php">
-    <img class="img-standard" src="<?php var_dump($data->get_path()); echo $data->get_path() ?>" alt="<?php echo $data->get_firstname()." ".$data->get_lastname() ?>">
-    <figcaption><?php echo $data->get_firstname()." ".$data->get_lastname() ?></figcaption>
+<span class="display-block"><?= $data->get_role() ?></span>
+<a href="<?= $data->get_role()=='Réalisateur' ? "./director.php" : "./actor.php";?>">
+    <img class="img-standard" src="<?= $data->get_path() ?>" alt="<?= $data->get_firstname()." ".$data->get_lastname() ?>">
+    <figcaption><?= $data->get_firstname()." ".$data->get_lastname() ?></figcaption>
 </a>
 </figure>

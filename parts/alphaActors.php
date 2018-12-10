@@ -21,7 +21,7 @@ $nb = $nb->fetch();
   <h2>Acteurs</h2>
   <ul>
 
-    <?php echo displayActors($nb,$bdd) ?>
+    <?= displayActors($nb,$bdd) ?>
 
   </ul>
 </div>

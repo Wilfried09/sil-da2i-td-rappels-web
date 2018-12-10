@@ -1,6 +1,6 @@
 <?php
   function displayFilm($movies){
-    for($i=1;$i<=count($movies);$i=$i+1){
+    for($i=1;$i<count($movies);$i=$i+1){
       getBlock('filmGallery', $movies[$i]);
     }
   }

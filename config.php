@@ -15,14 +15,13 @@ function getBlock($file, $data = []){
     die('Erreur : ' . $e->getMessage());
   }
   $nbMovies = $bdd->query('SELECT id_movie FROM movie');
-  $nbMovies = $nbMovies->fetch();//Contient deux id sur 5 présents dans la base de donnée
+  $nbMovies = $nbMovies->fetchAll(PDO::FETCH_COLUMN);//Contient deux id sur 5 présents dans la base de donnée
 
-  $nbDirectors = $bdd->query('SELECT p.id_person FROM person p, moviehasperson mp WHERE p.id_person = mp.id_person AND mp.role = 1');
-  $nbDirectors = $nbDirectors->fetch();
+  $nbDirectors = $bdd->query('SELECT DISTINCT p.id_person FROM person p, moviehasperson mp WHERE p.id_person = mp.id_person AND mp.role = 1');
+  $nbDirectors = $nbDirectors->fetchAll(PDO::FETCH_COLUMN);
 
-  $nbActors = $bdd->query('SELECT p.id_person FROM person p, moviehasperson mp WHERE p.id_person = mp.id_person AND mp.role = 0');
-  $nbActors = $nbActors->fetch();
-  var_dump($nbMovies);
+  $nbActors = $bdd->query('SELECT DISTINCT p.id_person FROM person p, moviehasperson mp WHERE p.id_person = mp.id_person AND mp.role = 0');
+  $nbActors = $nbActors->fetchAll(PDO::FETCH_COLUMN);
 
   $movies=getAllMovies($nbMovies);
   $directors=getAllDirectors($nbDirectors);
