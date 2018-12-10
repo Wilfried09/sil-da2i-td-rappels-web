@@ -6,10 +6,11 @@ class Person{
   private $birthdate;
   private $biography;
   private $path;
+  private $role;
 
-  public function __construct($id){
+  public function __construct($id, $role){
     $bdd = new PDO('mysql:host=localhost;dbname=bddmovie;charset=utf8', 'root', '');
-    $person = $bdd->query('SELECT p.id_person, p.firstname, p.lastname, p.birthdate, p.biography, pic.path FROM person p, personhaspicture pp, picture pic WHERE p.id_person = pp.id_person AND pp.id_picture = pic.id_picture AND p.id_person = "'.$id.'"');
+    $person = $bdd->query('SELECT p.id_person, p.firstname, p.lastname, p.birthdate, p.biography, pic.path, mp.role FROM person p, personhaspicture pp, picture pic, moviehasperson mp WHERE p.id_person = pp.id_person AND pp.id_picture = pic.id_picture AND p.id_person = "'.$id.'" AND mp.role ="'.$role.'" ');
     $person = $person->fetch();
     $this->id = $person[0];
     $this->firstname = $person[1];
@@ -17,6 +18,7 @@ class Person{
     $this->birthdate = $person[3];
     $this->biography = $person[4];
     $this->path = $person[5];
+    $this->role = ($person[6]==0 ? "Acteur" : "Réalisateur");
   }
 
   public function get_id(){
@@ -41,5 +43,9 @@ class Person{
 
   public function get_path(){
     return $this->path;
+  }
+
+  public function get_role(){
+    return $this->role;
   }
 }

@@ -1,10 +1,6 @@
-<?php
-
-require "./config.php";
-
-?>
+<?php require "./config.php"; ?>
 
 <!DOCTYPE html>
 <html lang="fr">
-    <?php getBlock('headInfos'); getBlock('bodyPerson'); ?>
+    <?php getBlock('bodyPerson'); ?>
 </html>
