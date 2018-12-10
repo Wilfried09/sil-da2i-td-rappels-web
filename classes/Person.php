@@ -10,7 +10,7 @@ class Person{
 
   public function __construct($id, $role){
     $bdd = new PDO('mysql:host=localhost;dbname=bddmovie;charset=utf8', 'root', '');
-    $person = $bdd->query('SELECT p.id_person, p.firstname, p.lastname, p.birthdate, p.biography, pic.path, mp.role FROM person p, personhaspicture pp, picture pic, moviehasperson mp WHERE p.id_person = pp.id_person AND pp.id_picture = pic.id_picture AND p.id_person = "'.$id.'" AND mp.role ="'.$role.'" ');
+    $person = $bdd->query('SELECT p.id_person, p.firstname, p.lastname, p.birthdate, p.biography, pic.path, mp.role FROM person p, personhaspicture pp, picture pic, moviehasperson mp WHERE p.id_person = pp.id_person AND pp.id_picture = pic.id_picture AND p.id_person = mp.id_person AND p.id_person = "'.$id.'" AND mp.role ="'.$role.'" ');
     $person = $person->fetch();
     $this->id = $person[0];
     $this->firstname = $person[1];
